@@ -5,9 +5,9 @@
 https://www.python.org/downloads/
 
 **Running OfferId.py**
-> Place your FurnitureData.json file in the same directory as the OfferId.py script
-> Open CMD Prompt in Script directory
-> Type OfferId.py and hit Enter
+> 1) Place your FurnitureData.json file in the same directory as the OfferId.py script
+> 2) Open CMD Prompt in Script directory
+> 3) Type OfferId.py and hit Enter
 
 **Once you have done so, it's important to run this SQL:**
 ```
