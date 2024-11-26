@@ -12,7 +12,12 @@ https://www.python.org/downloads/
 **Once you have done so, it's important to run these SQL's in order:**
 ```
 UPDATE catalog_items
-SET offer_id = item_ids
+SET offer_id = (
+    SELECT sprite_id
+    FROM items_base
+    WHERE items_base.id = catalog_items.item_ids
+    LIMIT 1
+)
 WHERE item_ids NOT LIKE '%;%';
 ```
 ```
