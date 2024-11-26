@@ -12,24 +12,12 @@ https://www.python.org/downloads/
 **Once you have done so, it's important to run these SQL's in order:**
 ```
 UPDATE catalog_items
-SET offer_id = (
-    SELECT sprite_id
-    FROM items_base
-    WHERE items_base.id = catalog_items.item_ids
-    LIMIT 1
-)
-WHERE item_ids NOT LIKE '%;%';
-```
-```
-UPDATE catalog_items AS ci
-JOIN items_base AS ib
-  ON ci.item_ids = ib.sprite_id
-SET ci.offer_id = CONCAT(ib.sprite_id, '9')
-WHERE ib.type = 'i'
-  AND ci.item_ids NOT LIKE '%;%'
-  AND LENGTH(CONCAT(ib.sprite_id, '9')) <= 9;
+SET offer_id = item_ids
+WHERE item_ids IS NOT NULL
+  AND item_ids NOT LIKE '%;%';
 
-  ```
+```
+
 **Instructions**
 >1) After executing these SQL Queries, simply run your :update_catalog command.
 >2) Replace your existing FurnitureData with this one.
