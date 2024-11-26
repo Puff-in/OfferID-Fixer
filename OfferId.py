@@ -7,7 +7,7 @@ for item in data.get("roomitemtypes", {}).get("furnitype", []):
     item["offerid"] = item["id"]
 
 for item in data.get("wallitemtypes", {}).get("furnitype", []):
-    item["offerid"] = f"{item['id']}97"
+    item["offerid"] = f"{item['id']}9"
 
 with open("new_FurnitureData.json", "w") as file:
     json.dump(data, file, indent=4)
