@@ -1,5 +1,5 @@
 # OfferID-Fixer
- This is a simple Python script that takes your Item ID in FurnitureData.json and copies it into the Offer ID, spitting out a file called new_FurnitureData.json. Replace your existing FurnitureData with this one, and purge your personal & Cloudflare Cache
+ This is a simple Python script that takes your Item ID in FurnitureData.json and copies it into the Offer ID, spitting out a file called new_FurnitureData.json.
 
 **Please install Python before continuing!**
 https://www.python.org/downloads/
@@ -29,5 +29,6 @@ WHERE ib.type = 'i'
   AND ci.item_ids NOT LIKE '%;%';
   ```
 
-After executing these SQL Queries, simply run your :update_catalog command
-
+>1) After executing these SQL Queries, simply run your :update_catalog command.
+>2) Replace your existing FurnitureData with this one.
+>3) Purge your Cloudflare and Personal (all time) cache, and then reload.
