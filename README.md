@@ -28,7 +28,7 @@ SET ci.offer_id = LEFT(CONCAT(ib.sprite_id, '97'), 10)
 WHERE ib.type = 'i'
   AND ci.item_ids NOT LIKE '%;%';
   ```
-
+**Instructions**
 >1) After executing these SQL Queries, simply run your :update_catalog command.
 >2) Replace your existing FurnitureData with this one.
 >3) Purge your Cloudflare and Personal (all time) cache, and then reload.
