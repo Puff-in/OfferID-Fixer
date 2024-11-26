@@ -24,9 +24,11 @@ WHERE item_ids NOT LIKE '%;%';
 UPDATE catalog_items AS ci
 JOIN items_base AS ib
   ON ci.item_ids = ib.sprite_id
-SET ci.offer_id = LEFT(CONCAT(ib.sprite_id, '97'), 10)
+SET ci.offer_id = CONCAT(ib.sprite_id, '9')
 WHERE ib.type = 'i'
-  AND ci.item_ids NOT LIKE '%;%';
+  AND ci.item_ids NOT LIKE '%;%'
+  AND LENGTH(CONCAT(ib.sprite_id, '9')) <= 9;
+
   ```
 **Instructions**
 >1) After executing these SQL Queries, simply run your :update_catalog command.
