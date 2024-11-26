@@ -9,10 +9,19 @@ https://www.python.org/downloads/
 > 2) Open CMD Prompt in Script directory
 > 3) Type OfferId.py and hit Enter
 
-**Once you have done so, it's important to run this SQL:**
+**Once you have done so, it's important to run these SQL's in order:**
 ```
-UPDATE Catalog_items
+UPDATE catalog_items
 SET offer_id = item_ids
 WHERE item_ids NOT LIKE '%;%';
 ```
+```
+UPDATE catalog_items AS ci
+JOIN items_base AS ib
+  ON ci.item_ids = ib.sprite_id
+SET ci.offer_id = LEFT(CONCAT(ib.sprite_id, '97'), 10)
+WHERE ib.type = 'i'
+  AND ci.item_ids NOT LIKE '%;%';
+  ```
+
 
