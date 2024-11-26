@@ -29,4 +29,5 @@ WHERE ib.type = 'i'
   AND ci.item_ids NOT LIKE '%;%';
   ```
 
+After executing these SQL Queries, simply run your :update_catalog command
 
