@@ -11,7 +11,7 @@ https://www.python.org/downloads/
 
 **Once you have done so, it's important to run this SQL:**
 ```
-UPDATE Catalog_pages
+UPDATE Catalog_items
 SET offer_id = item_ids
 WHERE item_ids NOT LIKE '%;%';
 ```
